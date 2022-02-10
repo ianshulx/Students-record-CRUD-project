@@ -42,15 +42,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link btn btn-outline-primary " style="margin-left: 10px; " href="{% url 'home' %}">Home <span class="sr-only"></span></a>
-        <a class="nav-link btn btn-outline-info" style="margin-left: 10px; " href="{% url 'list' %} ">Show Data <span class="sr-only"></span></a>
+        
+        <a class="nav-item nav-link btn btn-primary"  style="margin-left: 10px; " href="{% url 'home' %}"><i class="bi bi-house"></i>Home</a>
+        <a class="nav-item nav-link btn btn-info"  style="margin-left: 10px; " href="{% url 'list' %}"><i class="bi bi-search"></i>Show data</a>
+
+
+        <a class="nav-item nav-link btn btn-warning"  style="margin-left: 10px; " href="{% url 'export' %}"><i class="bi bi-download"></i>Download data</a>
 
         <a class="nav-item nav-link btn btn-success"  style="margin-left: 10px; " href="{% url 'adddata' %}"><i class="bi bi-person-plus"></i>Add New</a>
 
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
               <a class="nav-link btn btn-outline-dark" style="margin-left: 10px; " href="{% url 'signout' %}">
-                Logout
+                <i class="bi bi-box-arrow-right"> </i>Logout
               </a>
              
           </li>
@@ -78,6 +82,9 @@
       <th scope="col">Category</th>
 
       <th scope="col">Course</th>
+      <th scope="col">Department</th>
+      <th scope="col">lateral Entry</th>
+
       <th scope="col">City</th>
       <th scope="col">Mobile</th>
       <th scope="col">Photo</th>
@@ -85,6 +92,9 @@
       <th scope="col">PAN</th>
       <th scope="col">10th Marksheet</th>
       <th scope="col">12th Marksheet</th>
+      <th scope="col">Diploma Marksheet</th>
+      <th scope="col">Graduation Marksheet</th>
+
       <th scope="col">INCOME CERIFICATE</th>
       <th scope="col">CASTE CERTIFICATE</th>
       <th scope="col">CHARACTOR CERTIFICATE</th>
@@ -109,14 +119,14 @@
            </form></td>
           
 
-
-
         <td>{{Student_data.id}}</td>
         <td><a href="{% url 'application' Student_data.id %}">{{Student_data.first_name}} {{Student_data.middle_name}} {{Student_data.last_name}}</a></td>
         <td>{{Student_data.fathers_name}}</td>
         <td>{{Student_data.dob}}</td>
         <td>{{Student_data.category}}</td>
         <td>{{Student_data.course}}</td>
+        <td>{{Student_data.department}}</td>
+        <td>{{Student_data.lateral}}</td>
         <td>{{Student_data.city}}</td>
         <td>{{Student_data.mobile}}</td>
         <td><a href="media/{{Student_data.photo}}" download="media/{{Student_data.photo}}">{{Student_data.photo}}</a></td>
@@ -124,6 +134,8 @@
         <td><a href="media/{{Student_data.pan}}"download="media/{{Student_data.pan}}">{{Student_data.pan}}</a></td>
         <td><a href="media/{{Student_data.mark10}}"download="media/{{Student_data.mark10}}">{{Student_data.mark10}}</a></td>
         <td><a href="media/{{Student_data.mark12}}"download="media/{{Student_data.mark12}}">{{Student_data.mark12}}</a></td>
+        <td><a href="media/{{Student_data.mark_diploma}}"download="media/{{Student_data.mark12}}">{{Student_data.mark_diploma}}</a></td>
+        <td><a href="media/{{Student_data.mark_graduation}}"download="media/{{Student_data.mark12}}">{{Student_data.mark_graduation}}</a></td>
         <td><a href="media/{{Student_data.income}}"download="media/{{Student_data.income}}">{{Student_data.income}}</a></td>
         <td><a href="media/{{Student_data.caste}}"download="media/{{Student_data.caste}}">{{Student_data.caste}}</a></td>
         <td><a href="media/{{Student_data.charactor_certificate}}"download="media/{{Student_data.charactor_certificate}}">{{Student_data.charactor_certificate}}</a></td>
