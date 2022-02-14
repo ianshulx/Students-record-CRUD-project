@@ -9,9 +9,11 @@ from django.forms import CharField
 
 COURSE_CHOICE = (
  ('B.tech','B.tech'),
- ('MBA','MBA'),
+ ('M.tech','M.tech'),
+ 
  ('BCA','BCA'),
  ('BBA','BBA'),
+ ('MBA','MBA'),
  ('Diploma','Diploma'),
 )
 
@@ -33,11 +35,24 @@ GENDER_CHOICES = (
 
 )
 
+INCOME_CHOICES = (
+ ('Below 1 lac ','Below 1 lac'),
+ ('1 lac - 2 lac','1 lac - 2 lac'),
+ ('2 lac - 4 lac','2 lac - 4 lac'),
+ ('Above 4 lac','Above 4 lac'),
+ 
+
+)
+
+
+
 CATEGORY_CHOICES = (
  ('SC','SC'),
  ('ST','ST'),
  ('OBC','OBC'),
  ('GENERAL','GENERAL'),
+ ('MINORITY','MINORITY'),
+
  ('OHTER','OTHER'),
 
 )
@@ -81,8 +96,8 @@ SESSION_CHOICE = (
 
 class Student_data(models.Model):
  first_name = models.CharField(max_length=30)
- middle_name = models.CharField(max_length=30, blank=True, null=True)
- last_name = models.CharField(max_length=20)
+ middle_name = models.CharField(max_length=30, blank=True)
+ last_name = models.CharField(max_length=20, blank=True)
 
  
  fathers_name = models.CharField(max_length=100)
@@ -141,14 +156,20 @@ class Student_data(models.Model):
 
  pan = models.FileField(upload_to='d/3', blank=True, null=True)
  pan_no = models.CharField(max_length=10,  blank=True, null=True)
-
+ domicile = models.FileField(upload_to='d/9', blank=True, null=True)
  caste = models.FileField(upload_to='d/3', blank=True, null=True)
+ 
  income = models.FileField(upload_to='d/4', blank=True, null=True)
+ total_income=models.CharField( choices=INCOME_CHOICES,max_length=100, blank=True, null=True)
+
  charactor_certificate = models.FileField(upload_to='d/5', blank=True, null=True)
  mark10 = models.FileField(upload_to='d/6', blank=True, null=True)
  mark12 = models.FileField(upload_to='d/7', blank=True, null=True)
  mark_diploma = models.FileField(upload_to='d/7', blank=True, null=True)
  mark_graduation=models.FileField(upload_to='d/8', blank=True, null=True)
+ scholar_credit=models.CharField(choices=YES_NO, max_length=50, blank=True)
+ scholar_credit_ammount=models.CharField(max_length=50, blank=True)
+
 
 
 
