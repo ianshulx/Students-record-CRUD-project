@@ -63,6 +63,24 @@ YES_NO = (
  
 )
 
+INSTALLMENT=(
+ ('1','1'),
+ ('2','2'),
+ ('3','3'),
+ ('4','4'),
+ ('5','5'),
+ 
+)
+
+
+
+LATERAL = (
+ ('REGULAR','REGUALR'),
+ ('LATERAL ENTRY','LATERAL ENTRY')
+ 
+ 
+)
+
 SESSION_CHOICE = (
  
 
@@ -118,7 +136,7 @@ class Student_data(models.Model):
  
  pin = models.PositiveIntegerField()
  course = models.CharField(choices=COURSE_CHOICE, max_length=100)
- lateral=models.CharField(choices=YES_NO, max_length=50)
+ lateral=models.CharField(choices=LATERAL, max_length=50)
  session_start=models.CharField(choices=SESSION_CHOICE ,max_length=50)
  session_end=models.CharField( choices=SESSION_CHOICE,max_length=50)
 
@@ -167,9 +185,36 @@ class Student_data(models.Model):
  mark12 = models.FileField(upload_to='d/7', blank=True, null=True)
  mark_diploma = models.FileField(upload_to='d/7', blank=True, null=True)
  mark_graduation=models.FileField(upload_to='d/8', blank=True, null=True)
+
  scholar_credit=models.CharField(choices=YES_NO, max_length=50, blank=True, default='NO')
- scholar_credit_ammount=models.CharField(max_length=50, blank=True)
+
+ scholar_credit_ammount=models.PositiveIntegerField(blank=True, null=True)
+ 
+ number_of_installment=models.PositiveIntegerField(choices=INSTALLMENT , blank=True, null=True)
+
+
+ installment_1_ammount=models.PositiveIntegerField( blank=True, null=True)
+ installment_1_date=models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
+
+ installment_2_ammount=models.PositiveIntegerField( blank=True, null=True)
+ installment_2_date=models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
+
+ installment_3_ammount=models.PositiveIntegerField( blank=True, null=True)
+ installment_3_date=models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
+
+ installment_4_ammount=models.PositiveIntegerField( blank=True, null=True)
+ installment_4_date=models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
+
+ installment_5_ammount=models.PositiveIntegerField( blank=True, null=True)
+ installment_5_date=models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
+
+ 
+ 
+
  refrenced_by=models.CharField(max_length=100, blank=True)
+
+
+
 
 
 

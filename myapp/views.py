@@ -32,6 +32,7 @@ class HomeView(View):
 @login_required
 def application_form(request, pk):
   candidate = Student_data.objects.get(pk=pk)
+  
   return render(request, 'myapp/candidate.html', {'candidate':candidate})
 
 
