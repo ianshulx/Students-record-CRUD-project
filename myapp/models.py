@@ -68,7 +68,7 @@ INSTALLMENT=(
  ('2','2'),
  ('3','3'),
  ('4','4'),
- ('5','5'),
+ ('5','5')
  
 )
 
@@ -190,7 +190,7 @@ class Student_data(models.Model):
 
  scholar_credit_ammount=models.PositiveIntegerField(blank=True, null=True)
  
- number_of_installment=models.PositiveIntegerField(choices=INSTALLMENT , blank=True, null=True)
+ number_of_installment=models.CharField(choices=INSTALLMENT ,max_length=50, blank=True, null=True)
 
 
  installment_1_ammount=models.PositiveIntegerField( blank=True, null=True)
