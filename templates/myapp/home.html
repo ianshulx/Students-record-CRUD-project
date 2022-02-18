@@ -42,6 +42,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
+        
         <a class="nav-item nav-link btn btn-primary"  style="margin-left: 10px; " href="{% url 'home' %}"><i class="bi bi-house"></i>Home</a>
         <a class="nav-item nav-link btn btn-info"  style="margin-left: 10px; " href="{% url 'list' %}"><i class="bi bi-search"></i>Show data</a>
 
@@ -50,13 +51,16 @@
 
         <a class="nav-item nav-link btn btn-success"  style="margin-left: 10px; " href="{% url 'adddata' %}"><i class="bi bi-person-plus"></i>Add New</a>
 
+        <a class="nav-item nav-link btn btn-secondary"  style="margin-left: 10px; " href="{% url 'fee' %}"><i class="bi bi-activity"></i>Installments & scholar</a>
+
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link btn btn-outline-dark" style="margin-left: 10px; " href="{% url 'signout' %}">
+              <a class="nav-link btn btn-outline-danger" style="margin-left: 10px; " href="{% url 'signout' %}">
                 <i class="bi bi-box-arrow-right"> </i>Logout
               </a>
-             
+            
           </li>
+
         </ul>
   
       </div>
@@ -113,7 +117,8 @@
           </div>
         </a>
 
-        
+        <div class=""></div>       
+
 
 
 

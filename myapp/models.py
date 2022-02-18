@@ -23,7 +23,7 @@ DEPARTMENT_CHOICE = (
  ('Electrical department','Electrical department'),
  ('Mechanical Department','Mechanical Department'),
  ('Civil Department','Civil Department'),
- ('Electronics and Engineering Department','Electronics and Engineering Department'),
+ ('Electronic and Engineering Department','Electronic and Engineering Department'),
  
 )
 

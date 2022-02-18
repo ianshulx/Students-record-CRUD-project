@@ -18,12 +18,14 @@ urlpatterns = [
     path('signout', views.signout, name='signout'),
     path('home', views.menu, name='home'),
     path('export', views.export, name='export'),
+    path('exportfee', views.export_fee, name='exportfee'),
 
     path('list', views.stu_list, name='list'),
     path('add', views.HomeView.as_view(), name='adddata'),
     path('delete/<int:id>/', views.delete_data, name='deletedata'),
     path('<int:id>/', views.update_data, name='updatedata'),
     path('app/<int:pk>', views.application_form, name='application'),
+    path('fee', views.fee, name='fee'),
    
 
  

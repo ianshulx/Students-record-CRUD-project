@@ -1,3 +1,4 @@
+from datetime import date, datetime
 import re
 from turtle import home
 from urllib import response
@@ -58,6 +59,34 @@ def export(request):
 def stu_list(request):
    student=Student_data.objects.all()
    return render(request, 'myapp/list.html', {'student': student})
+
+
+@login_required
+def fee(request):
+    student=Student_data.objects.all()
+
+    return render(request, 'myapp/fee.html', {'student': student})
+
+def export_fee(request):
+    response = HttpResponse(content_type='text/scv')
+    writer = csv.writer(response)
+    writer.writerow(['First Name', 'Last Name', 'Middle Name', 'Fathers Name', 'Date Of Birth', 'Category',  'Mobile','Course','Department','Lateral Entry','Installment 1 date', 'Installment 1 ammount', 'Installment 2 date', 'Installment 2 ammount', 'Installment 3 date', 'Installment  ammount', 'Installment 4 date', 'Installment 4 ammount', 'Installment 5 date', 'Installment 5 ammount', ])
+    
+
+    for student in Student_data.objects.all().values_list('first_name', 'last_name', 'middle_name', 'fathers_name', 'dob', 'category',  'mobile', 'course','department','lateral' ,'installment_1_date','installment_1_ammount','installment_2_date','installment_2_ammount','installment_3_date','installment_3_ammount','installment_4_date','installment_4_ammount','installment_5_date','installment_5_ammount'  ):
+        writer.writerow(student)
+
+    response['Content-Disposition']= ' attachment; filename="installments.csv" '
+
+
+    return response
+
+    
+
+
+
+
+    
 
 # delete
 

@@ -47,11 +47,11 @@
         <a class="nav-item nav-link btn btn-info"  style="margin-left: 10px; " href="{% url 'list' %}"><i class="bi bi-search"></i>Show data</a>
 
 
-        <a class="nav-item nav-link btn btn-warning"  style="margin-left: 10px; " href="{% url 'export' %}"><i class="bi bi-download"></i>Download data</a>
+        <a class="nav-item nav-link btn btn-warning"  style="margin-left: 10px; " href="{% url 'exportfee' %}"><i class="bi bi-download"></i>Download installment data</a>
 
         <a class="nav-item nav-link btn btn-success"  style="margin-left: 10px; " href="{% url 'adddata' %}"><i class="bi bi-person-plus"></i>Add New</a>
 
-         <a class="nav-item nav-link btn btn-secondary"  style="margin-left: 10px; " href="{% url 'fee' %}"><i class="bi bi-activity"></i>Installments & scholar</a>
+         <a class="nav-item nav-link btn btn-secondary"  style="margin-left: 10px; " href="{% url 'fee' %}"><i class="bi bi-activity"></i>Installments</a>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
               <a class="nav-link btn btn-outline-danger" style="margin-left: 10px; " href="{% url 'signout' %}">
@@ -70,7 +70,11 @@
  
  <div class="form-group pull-right">
      <input type="text" class="search form-control" placeholder="Type student's name,id..... ,etc.">
+   
+     
  </div>
+
+
  <span class="counter pull-right"></span>
  <table class="table table-bordered  results">
    <thead>
@@ -79,27 +83,18 @@
       <th scope="col">id</th>
       <th scope="col">Full Name</th>
       <th scope="col">Father Name</th>
-      <th scope="col">DOB</th>
+      
       <th scope="col">Category</th>
 
-      <th scope="col">Course</th>
-      <th scope="col">Department</th>
-      <th scope="col">lateral Entry</th>
-
-      <th scope="col">City</th>
+      <th scope="col">Course & Department</th>
       <th scope="col">Mobile</th>
-      <th scope="col">Photo</th>
-      <th scope="col">ADHAAR</th>
-      <th scope="col">PAN</th>
-      <th scope="col">10th Marksheet</th>
-      <th scope="col">12th Marksheet</th>
-      <th scope="col">Diploma Marksheet</th>
-      <th scope="col">Graduation Marksheet</th>
+      
+      <th scope="col">Installment 1</th>
+      <th scope="col">Installment 2</th>
+      <th scope="col">Installment 3</th>
+      <th scope="col">Installment 4</th>
+      <th scope="col">Installment 5</th>
 
-      <th scope="col">INCOME CERIFICATE</th>
-      <th scope="col">CASTE CERTIFICATE</th>
-      <th scope="col">CHARACTOR CERTIFICATE</th>
-      <th scope="col">SIGNATURE</th>
      </tr>
      <tr class="warning no-result">
        <td colspan="4"><i class="fa fa-warning"></i> No result</td>
@@ -123,25 +118,17 @@
         <td>{{Student_data.id}}</td>
         <td><a href="{% url 'application' Student_data.id %}">{{Student_data.first_name}} {{Student_data.middle_name}} {{Student_data.last_name}}</a></td>
         <td>{{Student_data.fathers_name}}</td>
-        <td>{{Student_data.dob}}</td>
+        
         <td>{{Student_data.category}}</td>
-        <td>{{Student_data.course}}</td>
-        <td>{{Student_data.department}}</td>
-        <td>{{Student_data.lateral}}</td>
-        <td>{{Student_data.city}}</td>
+        <td>{{Student_data.course}} <br> ({{Student_data.department}})</td>
         <td>{{Student_data.mobile}}</td>
-        <td><a href="media/{{Student_data.photo}}" download="media/{{Student_data.photo}}">{{Student_data.photo}}</a></td>
-        <td><a href="media/{{Student_data.Adhaar}}" download="media/{{Student_data.Adhaar}}">{{Student_data.Adhaar}}</a></td>
-        <td><a href="media/{{Student_data.pan}}"download="media/{{Student_data.pan}}">{{Student_data.pan}}</a></td>
-        <td><a href="media/{{Student_data.mark10}}"download="media/{{Student_data.mark10}}">{{Student_data.mark10}}</a></td>
-        <td><a href="media/{{Student_data.mark12}}"download="media/{{Student_data.mark12}}">{{Student_data.mark12}}</a></td>
-        <td><a href="media/{{Student_data.mark_diploma}}"download="media/{{Student_data.mark12}}">{{Student_data.mark_diploma}}</a></td>
-        <td><a href="media/{{Student_data.mark_graduation}}"download="media/{{Student_data.mark12}}">{{Student_data.mark_graduation}}</a></td>
-        <td><a href="media/{{Student_data.income}}"download="media/{{Student_data.income}}">{{Student_data.income}}</a></td>
-        <td><a href="media/{{Student_data.caste}}"download="media/{{Student_data.caste}}">{{Student_data.caste}}</a></td>
-        <td><a href="media/{{Student_data.charactor_certificate}}"download="media/{{Student_data.charactor_certificate}}">{{Student_data.charactor_certificate}}</a></td>
-        <td><a href="media/{{Student_data.sign}}"download="media/{{Student_data.sign}}">{{Student_data.sign}}</a></td>
-
+        <td>  Date: [{{Student_data.installment_1_date}} ]   <br>Ammount:{{Student_data.installment_1_ammount}} ₹  </td>
+        <td>  Date: [{{Student_data.installment_2_date}} ]   <br>Ammount:{{Student_data.installment_2_ammount}} ₹  </td>
+        <td>  Date: [{{Student_data.installment_3_date}} ]   <br>Ammount:{{Student_data.installment_3_ammount}} ₹  </td>
+        <td>  Date: [{{Student_data.installment_4_date}} ]   <br>Ammount:{{Student_data.installment_4_ammount}} ₹  </td>
+        <td>  Date: [{{Student_data.installment_5_date}} ]   <br>Ammount:{{Student_data.installment_5_ammount}} ₹  </td>
+        
+        
 
         
       </tr>

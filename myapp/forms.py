@@ -103,7 +103,7 @@ class Student_data_form(forms.ModelForm):
 
  class Meta:
   model = Student_data
-  fields = ['first_name','middle_name', 'last_name', 'fathers_name', 'fathers_occupation', 'mothers_name','mothers_occupation', 'dob', 'gender', 'category','address', 'city', 'pin','mobile', 'mobile2', 'email',  'course', 'department', 'session_start', 'session_end', 'lateral',   'mark10', 'mark10_obtained' , 'mark10_total', 'mark12',  'mark12_obtained' , 'mark12_total', 'mark_graduation', 'mark_graduation_obtained' , 'mark_graduation_total' , 'photo', 'sign', 'Adhaar', 'Adhaar_no' ,'pan', 'pan_no', 'caste', 'income', 'scholar_credit', 'charactor_certificate', 'state', 'mark_diploma', 'mark_diploma_obtain', 'mark_diploma_total', 'domicile', 'total_income','number_of_installment', 'installment_1_ammount','installment_1_date', 'installment_2_ammount','installment_2_date', 'installment_3_ammount','installment_3_date','installment_4_ammount','installment_4_date','installment_5_ammount','installment_5_date']
+  fields = ['refrenced_by', 'first_name','middle_name', 'last_name', 'fathers_name', 'fathers_occupation', 'mothers_name','mothers_occupation', 'dob', 'gender', 'category','address', 'city', 'pin','mobile', 'mobile2', 'email',  'course', 'department', 'session_start', 'session_end', 'lateral',   'mark10', 'mark10_obtained' , 'mark10_total', 'mark12',  'mark12_obtained' , 'mark12_total', 'mark_graduation', 'mark_graduation_obtained' , 'mark_graduation_total' , 'photo', 'sign', 'Adhaar', 'Adhaar_no' ,'pan', 'pan_no', 'caste', 'income', 'scholar_credit', 'charactor_certificate', 'state', 'mark_diploma', 'mark_diploma_obtain', 'mark_diploma_total', 'domicile', 'total_income','number_of_installment', 'installment_1_ammount','installment_1_date', 'installment_2_ammount','installment_2_date', 'installment_3_ammount','installment_3_date','installment_4_ammount','installment_4_date','installment_5_ammount','installment_5_date']
   labels = {'first_name':'First Name', 'middle_name':'Middle Name', 'last_name':'Last Name' ,'fathers_name': 'Fathers Name' ,'fathers_occupation': 'Fathers occupation' , 'mothers_occupation': 'Mothers occupation' , 'dob': 'Date of Birth', 'pin':'Pin Code', 'mobile':'Mobile No.', 'mobile2':'Fathers mobile no.', 'email':'Email ID', 'lateral':'Admission type', 'photo':'Students Image', 'Adhaar':'Adhaar Card', 'pan':'Pan Card', 'caste':'Caste Certificate', 'income':'Income Certificate', 'charactor_certificate': 'Character Certificate', 'state':'State','scholar_credit':'Scholarship Credit', 'mark10': '10th Marksheet', 'session_start':'Session','session_end':'','mark_diploma':'Diploma Marsksheet', 'mark_diploma_obtain':'(for Lateral only) Marks obtained in diploma', 'mark_diploma_total':'Total marks in diploma',  'mark12': '12th Marksheet', 'mark10_obtained':'Obtained marks in 10th', 'mark10_total':'Total marks in 10th','mark12_obtained':'Obtained marks in 12th' , 'mark12_total':'Total marks in 12th', 'mark_graduation_obtained':'( MBA only ) Obtained marks in degree' , 'mark_graduation_total':'Total marks in degree', 'mark_graduation':'Graduation degree', 'domicile':'Domicile Certificate', 'total_income':'Annual family income'}
   
  
@@ -361,6 +361,18 @@ class Student_data_form(forms.ModelForm):
             
             FieldWithButtons('installment_5_ammount', css_class="col-sm-3"),
             FieldWithButtons('installment_5_date', css_class="col-sm-3"),
+
+
+
+
+
+            css_class='row',
+        ),
+
+                                                               Div(
+            
+            FieldWithButtons('refrenced_by', css_class="col-sm-7"),
+            
 
 
 
