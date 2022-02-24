@@ -4,7 +4,7 @@
 ## General info
 This project is simple Lorem ipsum dolor generator.
 	
-## Framework & Proj\gramming languages used
+## Framework & Programming languages used
 Project is created with:
 * Python version: 3.7
 * Django: 3.1.14
