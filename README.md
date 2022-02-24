@@ -17,7 +17,7 @@ open it in your terminal or  vs-code and run the following commands
 
 ```
 
-$ pip freeze > requirements
+$ pip install -r requirements.txt
 $ python manage.py runserver
 
 ```
