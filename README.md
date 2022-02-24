@@ -1,8 +1,5 @@
 # Students-record-CRUD-project
 
-
-## General info
-This project is simple Lorem ipsum dolor generator.
 	
 ## Framework & Programming languages used
 Project is created with:
