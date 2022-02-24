@@ -19,5 +19,5 @@ open it in your terminal or  vs-code and run the following commands
 
 $ pip freeze > requirements
 $ python manage.py runserver
-&
+
 ```
