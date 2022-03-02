@@ -1,4 +1,5 @@
 from datetime import date, datetime
+from pickle import FALSE
 import re
 from turtle import home
 from urllib import response
@@ -13,6 +14,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 import csv
+from .models import Student_data
+import datetime
+import winsound
+from datetime import datetime
 
 
 
@@ -82,6 +87,20 @@ def export_fee(request):
     return response
 
     
+
+def notice(request):
+    # installment_1_date = request.POST.get['installment_1_date',FALSE]
+
+    # if Student_data.objects.filter(installment_1_date):
+    #     installment_1_date = datetime.date
+    #     days = datetime.timedelta(days = 7)
+    #     new_date = installment_1_date - days
+    # else:
+    
+    return render(request, "myapp/notice.html")
+    
+
+
 
 
 

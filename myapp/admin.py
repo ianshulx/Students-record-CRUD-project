@@ -21,7 +21,7 @@ def download_csv(modeladmin, request, queryset):
 
 @admin.register(Student_data)
 class StudentdataModelAdmin(admin.ModelAdmin):
- list_display = ['id', 'first_name', 'last_name', 'middle_name', 'fathers_name', 'dob', 'category', 'city', 'mobile', 'course','department','lateral' , 'photo', 'Adhaar', 'pan', 'mark10','mark12', 'mark_diploma', 'mark_graduation','income', 'caste', 'charactor_certificate']
+ list_display = ['id', 'first_name', 'last_name', 'middle_name', 'fathers_name', 'dob', 'category', 'city', 'mobile', 'course','department','lateral' , 'photo', 'Adhaar', 'pan', 'mark10','mark12', 'mark_diploma', 'mark_graduation','income', 'caste', 'charactor_certificate','installment_1_date','installment_2_date','installment_3_date','installment_4_date','installment_5_date']
  search_fields = ['id', 'first_name', 'last_name', 'dob', 'gender', 'category', 'address', 'pin', 'course','department','lateral', 'mobile' ]
  actions = [download_csv]
 
