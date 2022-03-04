@@ -19,7 +19,7 @@ urlpatterns = [
     path('home', views.menu, name='home'),
     path('export', views.export, name='export'),
     path('exportfee', views.export_fee, name='exportfee'),
-    path('notice', views.notice, name='notice'),
+    
 
     path('list', views.stu_list, name='list'),
     path('add', views.HomeView.as_view(), name='adddata'),

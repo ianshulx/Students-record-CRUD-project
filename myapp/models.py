@@ -1,3 +1,4 @@
+from configparser import SectionProxy
 from email.policy import default
 from random import choice
 from re import T
@@ -185,6 +186,7 @@ class Student_data(models.Model):
  mark12 = models.FileField(upload_to='d/7', blank=True, null=True)
  mark_diploma = models.FileField(upload_to='d/7', blank=True, null=True)
  mark_graduation=models.FileField(upload_to='d/8', blank=True, null=True)
+ 
 
  scholar_credit=models.CharField(choices=YES_NO, max_length=50, blank=True, default='NO')
 

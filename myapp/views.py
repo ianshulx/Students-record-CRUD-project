@@ -88,16 +88,7 @@ def export_fee(request):
 
     
 
-def notice(request):
-    # installment_1_date = request.POST.get['installment_1_date',FALSE]
 
-    # if Student_data.objects.filter(installment_1_date):
-    #     installment_1_date = datetime.date
-    #     days = datetime.timedelta(days = 7)
-    #     new_date = installment_1_date - days
-    # else:
-    
-    return render(request, "myapp/notice.html")
     
 
 
