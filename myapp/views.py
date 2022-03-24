@@ -88,7 +88,8 @@ def export_fee(request):
 
     
 
-
+def notice(request):
+    return render(request, 'myapp/fee_notice.html',)
     
 
 
