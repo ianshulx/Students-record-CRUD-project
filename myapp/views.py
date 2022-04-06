@@ -89,7 +89,7 @@ def export_fee(request):
     
 
 def notice(request):
-     
+      
     # f1=Student_data.objects.all().values_list('installment_1_ammount')
     d1=Student_data.objects.all().values_list('installment_1_date')
      
