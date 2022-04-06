@@ -97,7 +97,7 @@ def notice(request):
     print("Today's date:", aaj)
     for date1 in d1:
         
-        if date1==aaj:
+        if (date1==aaj):
             print('Kaam Kar rha hai')
         else:
             
