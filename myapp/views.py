@@ -17,7 +17,7 @@ import csv
 from .models import Student_data
 import datetime
 import winsound
-from datetime import datetime
+from datetime import datetime, date
 
 
 
@@ -89,7 +89,28 @@ def export_fee(request):
     
 
 def notice(request):
-    return render(request, 'myapp/fee_notice.html',)
+    
+ 
+    
+    
+    # f1=Student_data.objects.all().values_list('installment_1_ammount')
+    d1=Student_data.objects.all().values_list('installment_1_date')
+    
+    
+    
+    aaj =date.today()
+    print("Today's date:", aaj)
+    for date1 in d1:
+        
+        if (date1==aaj):
+            print('Kaam Kar rha hai')
+        else:
+            
+            print('Installment date :' , date1)
+            
+    
+
+    return render(request, 'myapp/fee_notice.html')
     
 
 
