@@ -6,6 +6,7 @@ from random import choice
 from re import T
 from django.db import models
 import os
+from datetime import datetime, date
 
 from django.forms import CharField
 
@@ -216,6 +217,9 @@ class Student_data(models.Model):
  
 
  refrenced_by=models.CharField(max_length=100, blank=True)
+
+
+
  
 
 

@@ -89,13 +89,10 @@ def export_fee(request):
 def notice(request):   
     # f1=Student_data.objects.all().values_list('installment_1_ammount')
     d1=Student_data.objects.all().values_list('installment_1_date')
-     
-    
     now = datetime.now()
     # din = now.strftime("(datetime.date(%Y, %m, %d),)")
     aaj="(datetime.date(2022, 4, 8),)"
     print("date and time:",aaj)
-
 
     for date1 in d1:
         i1=str(date1)
@@ -105,7 +102,6 @@ def notice(request):
 
         else:
             print('Installment date :' , i1)    
-
 
     return render(request, 'myapp/fee_notice.html')
     
