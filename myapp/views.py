@@ -90,15 +90,21 @@ def notice(request):
     # f1=Student_data.objects.all().values_list('installment_1_ammount')
     d1=Student_data.objects.all().values_list('installment_1_date')
      
-    aaj =date.today()
-    print("Today's date:", aaj)
+    
+    now = datetime.now()
+    # din = now.strftime("(datetime.date(%Y, %m, %d),)")
+    aaj="(datetime.date(2022, 4, 8),)"
+    print("date and time:",aaj)
+
 
     for date1 in d1:
-          
-        if (date1==aaj):
-            print('Kaam Kar rha hai')
+        i1=str(date1)
+
+        if (i1==aaj):
+            print('Kaam Kar rha hai :: ', i1)
+
         else:
-            print('Installment date :' , date1)    
+            print('Installment date :' , i1)    
 
 
     return render(request, 'myapp/fee_notice.html')
@@ -108,8 +114,6 @@ def notice(request):
 
 
 
-
-    
 
 # delete
 
