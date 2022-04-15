@@ -20,6 +20,7 @@ urlpatterns = [
     path('export', views.export, name='export'),
     path('exportfee', views.export_fee, name='exportfee'),
     path('notice', views.notice, name='notice'),
+    path('noticefile', views.noticefile, name='noticefile'),
     
 
     path('list', views.stu_list, name='list'),

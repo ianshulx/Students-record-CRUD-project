@@ -47,11 +47,11 @@
         <a class="nav-item nav-link btn btn-info"  style="margin-left: 10px; " href="{% url 'list' %}"><i class="bi bi-search"></i>Show data</a>
 
 
-        <a class="nav-item nav-link btn btn-warning"  style="margin-left: 10px; " href="{% url 'export' %}"><i class="bi bi-download"></i>Download data</a>
+        <a class="nav-item nav-link btn btn-warning"  style="margin-left: 10px; " href="{% url 'noticefile' %}"><i class="bi bi-download"></i>nstallments data</a>
 
         <a class="nav-item nav-link btn btn-success"  style="margin-left: 10px; " href="{% url 'adddata' %}"><i class="bi bi-person-plus"></i>Add New</a>
 
-        <a class="nav-item nav-link btn btn-secondary"  style="margin-left: 10px; " href="{% url 'fee' %}"><i class="bi bi-activity"></i>Installments & scholar</a>
+        <a class="nav-item nav-link btn btn-secondary"  style="margin-left: 10px; " href="{% url 'fee' %}"><i class="bi bi-activity"></i>All Installments</a>
 
 
               <a class="nav-link btn btn-outline-danger" style="margin-left: 10px; " href="{% url 'signout' %}">
@@ -70,6 +70,31 @@
       </div>
     </div>
   </nav>
+
+<h1 class="bg-success text-center">Pending Installments Notices</h1>
+  
+
+
+<form class="form-control">
+
+<li class="list-group-item" style="color: green;"><b> FULL NAME  || 'FATHER'S NAMAE'|| 'CATEGORY'|| MOBILE NO.|| 'COURSE'|| 'DEPARTMENT'|| 'INSTALLMENT DATE' </li></b> </li><br>
+
+{% for temp in list1  %}
+
+
+<ul class="list-group list-group-numbered">
+  <li class="list-group-item"><b>{{temp}}</b> </li>
+
+</ul>
+
+
+{% endfor %}
+
+
+<button class="nav-item nav-link btn btn-warning"><a href="{% url 'noticefile' %}"><i class="bi bi-download"></i>Download installments data</a></button>
+
+</form>
+
 
 
         

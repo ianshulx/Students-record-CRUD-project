@@ -3,6 +3,8 @@ from pickle import FALSE
 import re
 from turtle import home
 from urllib import response
+from django import http
+from django.forms import DateField
 from django.http import HttpResponse
 from django.shortcuts import redirect, render,HttpResponseRedirect
 from .forms import Student_data_form
@@ -17,7 +19,8 @@ import csv
 from .models import Student_data
 import datetime
 import winsound
-from datetime import datetime, date
+from datetime import datetime, timedelta
+
 
 
 
@@ -87,31 +90,159 @@ def export_fee(request):
     return response
 
 def notice(request):   
-    # f1=Student_data.objects.all().values_list('installment_1_ammount')
-    d1=Student_data.objects.all().values_list('installment_1_date')
-    now = datetime.now()
-    # din = now.strftime("(datetime.date(%Y, %m, %d),)")
-    aaj="(datetime.date(2022, 4, 8),)"
-    print("date and time:",aaj)
+    data1=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_1_date' )
+    data2=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_2_date' )
+    data3=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_3_date' )
+    data4=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_4_date' )
+    data5=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_5_date' )
+    
+    list1 =[]
+    
 
-    for date1 in d1:
-        i1=str(date1)
+    aajkadin=date.today()
+    print('aajkadin:::', aajkadin)
+    print(data1)
 
-        if (i1==aaj):
-            print('Kaam Kar rha hai :: ', i1)
+    w2 = (date.today() + timedelta(days=1))
+    w3 = (date.today() + timedelta(days=2))
+    w4 = (date.today() + timedelta(days=3))
+    w5 = (date.today() + timedelta(days=4))
+    w6 = (date.today() + timedelta(days=5))
+    w7 = (date.today() + timedelta(days=6))
 
-        else:
-            print('Installment date :' , i1)    
+    print('timedaketi ::', w2, w3, w4, w5, w6, w7)
 
-    return render(request, 'myapp/fee_notice.html')
+    
+    for i in data1:
+        print(i)
+        for j in i:
+            print(j)
+            if j==aajkadin or j==w2 or j==w3 or j==w4 or j==w5 or j==w6 or j==w7:
+        
+                print("working")
+                list1.append(i)
+                
+    for i in data2:
+        print(i)
+        for j in i:
+            print(j)
+            if j==aajkadin or j==w2 or j==w3 or j==w4 or j==w5 or j==w6 or j==w7:
+        
+                print("working")
+                list1.append(i)
+
+    for i in data3:
+        print(i)
+        for j in i:
+            print(j)
+            if j==aajkadin or j==w2 or j==w3 or j==w4 or j==w5 or j==w6 or j==w7:
+        
+                print("working")
+                list1.append(i)
+
+
+    for i in data4:
+        print(i)
+        for j in i:
+            print(j)
+            if j==aajkadin or j==w2 or j==w3 or j==w4 or j==w5 or j==w6 or j==w7:
+        
+                print("working")
+                list1.append(i)
+
+
+    for i in data5:
+        print(i)
+        for j in i:
+            print(j)
+            if j==aajkadin or j==w2 or j==w3 or j==w4 or j==w5 or j==w6 or j==w7:
+        
+                print("working")
+                list1.append(i)
+
+               
+    return render(request, 'myapp/fee_notice.html', {'list1': list1})
+
+
+def noticefile(request):   
+    
+    # date1=Student_data.objects.all().values_list('installment_1_date')
+    data1=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_1_date','installment_1_ammount' )
+    data2=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_2_date' )
+    data3=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_3_date' )
+    data4=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_4_date' )
+    data5=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_5_date' )
     
 
 
 
+    aajkadin=date.today()
+    print('aajkadin:::', aajkadin)
+    print(data1)
+
+    w2 = (date.today() + timedelta(days=1))
+    w3 = (date.today() + timedelta(days=2))
+    w4 = (date.today() + timedelta(days=3))
+    w5 = (date.today() + timedelta(days=4))
+    w6 = (date.today() + timedelta(days=5))
+    w7 = (date.today() + timedelta(days=6))
+
+    response = HttpResponse(content_type='text/scv')
+    writer = csv.writer(response)
+    writer.writerow(['First Name', 'Last Name', 'Middle Name', 'Fathers Name', 'Category',  'Mobile','Course','Department','Installment 1 date', 'Installment 1 ammount' ])
+    
+    for i in data1:
+        print(i)
+        for j in i:
+            print(j)
+            if j==aajkadin or j==w2 or j==w3 or j==w4 or j==w5 or j==w6 or j==w7:
+                print("working")
+                
+                writer.writerow(i)
+    for i in data2:
+        print(i)
+        for j in i:
+            print(j)
+            if j==aajkadin or j==w2 or j==w3 or j==w4 or j==w5 or j==w6 or j==w7:
+                print("working")
+                
+                writer.writerow(i)
+
+    for i in data3:
+        print(i)
+        for j in i:
+            print(j)
+            if j==aajkadin or j==w2 or j==w3 or j==w4 or j==w5 or j==w6 or j==w7:
+                print("working")
+                
+                writer.writerow(i)
+
+
+    for i in data4:
+        print(i)
+        for j in i:
+            print(j)
+            if j==aajkadin or j==w2 or j==w3 or j==w4 or j==w5 or j==w6 or j==w7:
+                print("working")
+                
+                writer.writerow(i)
+
+
+    for i in data5:
+        print(i)
+        for j in i:
+            print(j)
+            if j==aajkadin or j==w2 or j==w3 or j==w4 or j==w5 or j==w6 or j==w7:
+                print("working")
+                
+                writer.writerow(i)
+
+    response['Content-Disposition']= ' attachment; filename="pendinginstallments.csv" '
+    return response
+                
 
 
 
-# delete
 
 @login_required
 def delete_data(request, id):

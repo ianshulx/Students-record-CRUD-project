@@ -217,6 +217,12 @@ class Student_data(models.Model):
  
 
  refrenced_by=models.CharField(max_length=100, blank=True)
+ 
+ 
+
+
+
+    
 
 
 
