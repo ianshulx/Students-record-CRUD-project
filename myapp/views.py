@@ -90,11 +90,11 @@ def export_fee(request):
     return response
 
 def notice(request):   
-    data1=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_1_date' )
-    data2=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_2_date' )
-    data3=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_3_date' )
-    data4=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_4_date' )
-    data5=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_5_date' )
+    data1=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_1_date','installment_1_ammount' )
+    data2=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_2_date','installment_2_ammount' )
+    data3=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_3_date','installment_3_ammount' )
+    data4=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_4_date','installment_4_ammount' )
+    data5=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_5_date','installment_5_ammount' )
     
     list1 =[]
     

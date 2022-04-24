@@ -59,7 +59,7 @@
           <th scope="col">Class</th>
           <th scope="col">Obtained Marks</th>
           <th scope="col">Total Marks</th>
-          <th scope="col">Download Marksheet</th>
+          <th scope="col">Download Marksheet </th>
           
         </tr>
       </thead>
@@ -68,26 +68,26 @@
           <th scope="row">10th</th>
           <td>{{candidate.mark10_obtained}}</td>
           <td>{{candidate.mark10_total}}</td>
-          <td><a href="/media/{{candidate.mark10}}" download="media/{{Student_data.mark10}}">Download File</a></td>
+          <td><a href="/media/{{candidate.mark10}}" download="media/{{Student_data.mark10}}">{{candidate.mark12}}</a></td>
           
         </tr>
         <tr>
           <th scope="row">12th</th>
           <td>{{candidate.mark12_obtained}}</td>
           <td>{{candidate.mark12_total}}</td>
-          <td><a href="/media/{{candidate.mark12}}" download="media/{{Student_data.mark12}}">Download File</a></td>
+          <td><a href="/media/{{candidate.mark12}}" download="media/{{Student_data.mark12}}">{{candidate.mark12}}</a></td>
         </tr>
         <tr>
           <th scope="row">Diploma (B.tech lateral only)</th>
           <td>{{candidate.mark_diploma_obtain}}</td>
           <td>{{candidate.mark_diploma_total}}</td> 
-          <td><a href="/media/{{candidate.mark_diploma}}" download="media/{{Student_data.mark_diploma}}">Download File</a></td>
+          <td><a href="/media/{{candidate.mark_diploma}}" download="media/{{Student_data.mark_diploma}}">{{candidate.mark_diploma}}</a></td>
         </tr>
         <tr>
-          <th scope="row">Graduation (MBA only)</th>
+          <th scope="row">Graduation (MBA & M.tech only)</th>
           <td>{{candidate.mark_graduation_obtained}}</td>
           <td>{{candidate.mark_graduation_total}}</td>
-          <td><a href="/media/{{candidate.mark_graduation}}" download="media/{{Student_data.mark_graduation}}">Download File</a></td>
+          <td><a href="/media/{{candidate.mark_graduation}}" download="media/{{Student_data.mark_graduation}}">{{candidate.mark_graduation}}</a></td>
           
         </tr>
       </tbody>
@@ -98,13 +98,13 @@
     </div>
 
      
-     <p>Adhaar Card: <a href="/media/{{candidate.Adhaar}}" download="media/{{Student_data.Adhaar}}">Download File </a></p>
-     <p>PAN Card: <a href="/media/{{candidate.pan}}" download="media/{{Student_data.pan}}">Download File</a></p>
+     <p>Adhaar Card: <a href="/media/{{candidate.Adhaar}}" download="media/{{Student_data.Adhaar}}">  {{candidate.Adhaar}} </a></p>
+     <p>PAN Card: <a href="/media/{{candidate.pan}}" download="media/{{Student_data.pan}}">{{candidate.pan}}</a></p>
     
-     <p>Income Cetificate: <a href="/media/{{candidate.income}}" download="media/{{Student_data.income}}">Download File</a></p>
-     <p>Caste Certificate: <a href="/media/{{candidate.caste}}" download="media/{{Student_data.caste}}">Download File</a></p>
-     <p>Charactor Certificate: <a href="/media/{{candidate.charactor_certificate}}" download="media/{{Student_data.charactor_certificate}}">Download File</a></p>
-     <p>Signature: <a href="/media/{{candidate.sign}}" download="media/{{Student_data.sign}}">Download File</a></p>
+     <p>Income Cetificate: <a href="/media/{{candidate.income}}" download="media/{{Student_data.income}}">{{candidate.income}} </a></p>
+     <p>Caste Certificate: <a href="/media/{{candidate.caste}}" download="media/{{Student_data.caste}}">{{candidate.caste}}</a></p>
+     <p>Charactor Certificate: <a href="/media/{{candidate.charactor_certificate}}" download="media/{{Student_data.charactor_certificate}}">{{candidate.charactor_certificate}}</a></p>
+     <p>Signature: <a href="/media/{{candidate.sign}}" download="media/{{Student_data.sign}}">{{candidate.sign}}</a></p>
 
      <h3 class="alert alert-success">Fee & scholarship details</h3>
      <p></p>
