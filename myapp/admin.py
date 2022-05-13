@@ -3,7 +3,7 @@ from .models import Student_data
 from django.http import HttpResponse
 
 
-def download_csv(modeladmin, request, queryset):
+def download_all_data(modeladmin, request, queryset):
     import csv
     response = HttpResponse(content_type='text/scv')
     
@@ -23,7 +23,11 @@ def download_csv(modeladmin, request, queryset):
 class StudentdataModelAdmin(admin.ModelAdmin):
  list_display = ['id', 'first_name', 'last_name', 'middle_name', 'fathers_name', 'dob', 'category', 'city', 'mobile', 'course','department','lateral' , 'photo', 'Adhaar', 'pan', 'mark10','mark12', 'mark_diploma', 'mark_graduation','income', 'caste', 'charactor_certificate']
  search_fields = ['id', 'first_name', 'last_name', 'dob', 'gender', 'category', 'address', 'pin', 'course','department','lateral', 'mobile' ]
- actions = [download_csv]
+ actions = [download_all_data]
+
+
+
+ 
 
 
 
