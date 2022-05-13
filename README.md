@@ -13,6 +13,13 @@ download the project, Unzip on on local machine
 open it in your terminal or  vs-code and run the following commands
 
 ```
+#create virtual enviriment uisng this code 
+$ python -m venv venv
+
+#now activate virtual enviroment
+$ venv\Scripts\Activate
+
+#now clone this repo & intsall 
 
 $ pip install -r requirements.txt
 $ python manage.py migrate
