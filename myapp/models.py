@@ -199,19 +199,19 @@ class Student_data(models.Model):
 
 
  installment_1_ammount=models.PositiveIntegerField( blank=True, null=True)
- installment_1_date=models.DateField(auto_now=False, auto_now_add=False, blank=True)
+ installment_1_date=models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
 
  installment_2_ammount=models.PositiveIntegerField( blank=True, null=True)
- installment_2_date=models.DateField(auto_now=False, auto_now_add=False, blank=True)
+ installment_2_date=models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
 
  installment_3_ammount=models.PositiveIntegerField( blank=True, null=True)
- installment_3_date=models.DateField(auto_now=False, auto_now_add=False, blank=True)
+ installment_3_date=models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
 
  installment_4_ammount=models.PositiveIntegerField( blank=True, null=True)
- installment_4_date=models.DateField(auto_now=False, auto_now_add=False, blank=True)
+ installment_4_date=models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
 
  installment_5_ammount=models.PositiveIntegerField( blank=True, null=True)
- installment_5_date=models.DateField(auto_now=False, auto_now_add=False, blank=True)
+ installment_5_date=models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
 
  
  
