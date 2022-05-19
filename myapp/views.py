@@ -25,7 +25,6 @@ from datetime import datetime, timedelta
 
 
 class HomeView(View):
-
  def get(self, request):
   form = Student_data_form()
   candidates = Student_data.objects.all()
@@ -45,7 +44,7 @@ def application_form(request, pk):
   return render(request, 'myapp/candidate.html', {'candidate':candidate})
 
 
-
+@login_required
 def export(request):
     response = HttpResponse(content_type='text/scv')
     writer = csv.writer(response)
@@ -74,7 +73,7 @@ def fee(request):
     student=Student_data.objects.all()
 
     return render(request, 'myapp/fee.html', {'student': student})
-
+@login_required
 def export_fee(request):
     response = HttpResponse(content_type='text/scv')
     writer = csv.writer(response)
@@ -88,7 +87,7 @@ def export_fee(request):
 
 
     return response
-
+@login_required
 def notice(request):   
     data1=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_1_date','installment_1_ammount' )
     data2=Student_data.objects.all().values_list( 'first_name', 'last_name', 'middle_name', 'fathers_name', 'category',  'mobile', 'course','department','installment_2_date','installment_2_ammount' )
@@ -163,7 +162,7 @@ def notice(request):
                
     return render(request, 'myapp/fee_notice.html', {'list1': list1})
 
-
+@login_required
 def noticefile(request):   
     
     # date1=Student_data.objects.all().values_list('installment_1_date')
@@ -265,7 +264,7 @@ def update_data(request, id):
    return render(request, "myapp/updatedata.html", {'form': form})
 
 
-
+@login_required
 def menu(request):
     return render(request, 'myapp/home.html')
 
